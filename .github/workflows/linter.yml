@@ -1,0 +1,30 @@
+name: Linter
+
+on:
+  push:
+    branches: 
+      - main
+      - dev
+  pull_request:
+    branches: 
+      - main
+
+jobs:
+  lint:
+    name: Run ESLint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run ESLint
+        run: pnpm run lint
