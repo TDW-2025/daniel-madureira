@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
+[![Jest Tests](https://github.com/TDW-2025/daniel-madureira/actions/workflows/tests.yml/badge.svg)](https://github.com/TDW-2025/daniel-madureira/actions/workflows/tests.yml)
+[![Linter](https://github.com/TDW-2025/daniel-madureira/actions/workflows/linter.yml/badge.svg)](https://github.com/TDW-2025/daniel-madureira/actions/workflows/linter.yml)
+
 ## Getting Started
 
 First, run the development server:
