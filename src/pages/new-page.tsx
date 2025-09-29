@@ -10,7 +10,7 @@ export default function NewPage() {
       <p className="text-center text-lg">Welcome to the new page!</p>
       <section className="m-2 text-center flex-col flex gap-2 justify-center">
         <Link href="/" className="mt-4 text-white p-2 rounded-xl bg-blue-500">
-          Go back to Home
+          Go back to HomePage
         </Link>
         <Link
           href="https://github.com/TDW-2025/daniel-madureira/actions"
