@@ -1,7 +1,4 @@
-import Link from "next/dist/client/link";
-import React from "react";
-
-import { FaGithub } from "react-icons/fa";
+import React from 'react';
 
 export default function NewPage() {
   return (
@@ -21,7 +18,6 @@ export default function NewPage() {
           Check the <span className="font-bold">Lint</span>
           <br /> pipeline on <FaGithub />
         </Link>
-      </section>
     </div>
   );
 }
