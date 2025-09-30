@@ -1,0 +1,26 @@
+name: Jest Tests
+
+on:
+    push:
+        branches:
+            - '**'
+
+jobs:
+    test:
+        name: Run Jest Tests
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Install pnpm
+              uses: pnpm/action-setup@v2
+              with:
+                  version: 10
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Run tests
+              run: pnpm test --coverage --coverageReporters="json-summary"
