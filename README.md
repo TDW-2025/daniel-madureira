@@ -1,5 +1,5 @@
-[![Jest Tests](https://github.com/TDW-2025/daniel-madureira/actions/workflows/tests.yml/badge.svg)](https://github.com/TDW-2025/daniel-madureira/actions/workflows/tests.yml)
-[![Linter](https://github.com/TDW-2025/daniel-madureira/actions/workflows/linter.yml/badge.svg)](https://github.com/TDW-2025/daniel-madureira/actions/workflows/linter.yml)
+[![CI/CD Workflow](https://github.com/TDW-2025/daniel-madureira/actions/workflows/pipeline.yml/badge.svg)](https://github.com/TDW-2025/daniel-madureira/actions/workflows/pipeline.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/701fa74b-3307-4b04-a7d7-909b729cb8d6/deploy-status)](https://app.netlify.com/projects/daniel-madureira/deploys)
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
