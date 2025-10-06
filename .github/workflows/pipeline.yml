@@ -8,7 +8,7 @@ on:
   pull_request:
     branches:
       - '**'
-      
+
 jobs:
   lint:
     name: Run ESLint
@@ -90,4 +90,4 @@ jobs:
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        run: pnpm netlify deploy --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --prod
+        run: pnpm netlify deploy --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN --prod
