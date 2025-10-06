@@ -2,11 +2,11 @@ name: Linter
 
 on:
   push:
-    branches: 
-      - '**'
+    branches:
+      - "**"
   pull_request:
-    branches: 
-      - '**'
+    branches:
+      - "**"
 
 jobs:
   lint:
@@ -27,3 +27,22 @@ jobs:
 
       - name: Run ESLint
         run: pnpm run lint
+
+  prettier:
+    name: Run Prettier
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Prettier
+        run: pnpm prettier
