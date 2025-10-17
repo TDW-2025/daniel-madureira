@@ -1,0 +1,44 @@
+name: CD - Continuous Deployment
+run-name: ${{ github.workflow }} - ${{ github.event_name }} - ${{ github.ref }} by ${{ github.actor }}
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_run:
+    workflows: ["CI - Continuous Integration"]
+    types:
+      - completed
+
+jobs:
+  build:
+    name: Build Next.js Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build project
+        run: pnpm build
+
+  deploy:
+    name: Deploy to Netlify
+    needs: build
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+      - name: Install dependencies
+        run: pnpm install
+      - name: Deploy to Netlify
+        run: pnpm netlify deploy --site=${{ secrets.NETLIFY_SITE_ID }} --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} --prod
